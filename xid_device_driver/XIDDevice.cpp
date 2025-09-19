@@ -1810,6 +1810,8 @@ void Cedrus::XIDDevice::ClearLines()
     m_linesState = 0;
 }
 
+// Note that mx and similar commands will fail to raise lines masked off by mt and mk calls
+// Lines can be reclaimed entirely by mc and selectively by mk calls, if necessary.
 void Cedrus::XIDDevice::SendPulse(unsigned int duration, unsigned int lines, unsigned int pulses, unsigned int ipi)
 {
     if (!m_config->IsXID2())

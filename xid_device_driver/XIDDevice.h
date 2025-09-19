@@ -208,6 +208,8 @@ namespace Cedrus
         void RaiseLines(unsigned int linesBitmask, bool leaveRemainingLines = false);
         void LowerLines(unsigned int linesBitmask, bool leaveRemainingLines = false);
         void ClearLines();
+        // Note that mx and similar commands will fail to raise lines masked off by mt and mk calls
+        // Lines can be reclaimed entirely by mc and selectively by mk calls, if necessary.
         void SendPulse(unsigned int duration, unsigned int lines, unsigned int pulses, unsigned int ipi); // mx
         bool ArePulsesBeingSent() const; // _mx
 
